@@ -3,7 +3,7 @@ import sampleData from "./SampleData.json"
 
 export const DictionaryApp=()=>{
     const [word, setWord] = useState("");
-    const [defintion,setDefintion]=useState("");
+    const [Defintion,setDefintion]=useState("");
     
 
     const handleChange=(e)=>{
@@ -36,9 +36,8 @@ export const DictionaryApp=()=>{
             <input type="text" placeholder="Search for a word..." value={word} required onChange={handleChange}/>
             <button type="button" onClick={handleButton}>Search</button><br/>
             <h3>Definiton:</h3>
-            {
-                defintion && <p>{defintion}</p>
-            }
+            <p>{Defintion}</p>
+            
             
         </>
     )
