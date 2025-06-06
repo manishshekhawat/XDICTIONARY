@@ -4,7 +4,7 @@ import sampleData from "./SampleData.json"
 export const DictionaryApp=()=>{
     const [word, setWord] = useState("");
     const [defintion,setDefintion]=useState("");
-    
+    const [notFound,setNotFound]=useState(false);
 
     const handleChange=(e)=>{
         setWord(e.target.value)
@@ -20,10 +20,12 @@ export const DictionaryApp=()=>{
         })
         if(wordFound){
             setDefintion(wordFound.meaning)
+            setNotFound(false);
             
         }
         else{
-            setDefintion("Word not found in the dictionary.")     
+            setNotFound(true)
+                 
         }
         
         
@@ -37,7 +39,9 @@ export const DictionaryApp=()=>{
             <button type="button" onClick={handleButton}>Search</button><br/>
             <h3>Definition:</h3>
             <p>{defintion}</p>
-            
+            {
+                notFound && <p>Word not found in the dictionary.</p>
+            }
             
         </>
     )
