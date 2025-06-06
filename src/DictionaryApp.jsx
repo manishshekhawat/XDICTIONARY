@@ -25,7 +25,7 @@ export const DictionaryApp = () => {
       setDefintion(wordFound.meaning);
       setNotFound(false);
     } else {
-      setDefintion(""); 
+      setDefintion("");
       setNotFound(true);
     }
   };
@@ -45,7 +45,7 @@ export const DictionaryApp = () => {
       </button>
       <br />
       <h3>Definition:</h3>
-      <p>{defintion}</p>
+      {defintion && <p>{defintion}</p>}
       {notFound && <p>Word not found in the dictionary.</p>}
     </>
   );
